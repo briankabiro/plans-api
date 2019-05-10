@@ -1,26 +1,29 @@
-# README
-
 ## Plans API
 
 This is an API for a membership platform. 
 
-The API currently has two resources: plans and members.
+#### Setup
+  1. Clone the repository
+  2. cd into the directory `plans-api` and run `bundle` to install the dependencies
+  3. Run `rails db:migrate`
+  4. Run `rails s` to start the API
 
-Things you may want to cover:
+#### Testing
+- Run `rspec` to run the tests
 
-* Ruby version
+- On the repo, the coverage percentage can be found in this [file](https://github.com/briankabiro/plans-api/blob/master/coverage/.last_run.json).
 
-* System dependencies
+#### Project outline
+- The API currently has two resources: plans and members.
+  
+- The **members_controller** and **plans_controller** hold the code for handling requests
 
-* Configuration
 
-* Database creation
+#### Todos
+ - [ ] Add `member_controller` tests
+ - [ ] Remove **recurrent** column flag from Plans table
 
-* Database initialization
+ - [ ] Add table of endpoints to the README
 
-* How to run the test suite
-  rspec
+ - [ ] Add API namespacing
 
-* Setup
-  * Run `rails s` to start the API
-* ...
