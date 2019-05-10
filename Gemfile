@@ -39,6 +39,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'rails-controller-testing'
   gem 'simplecov', require: false
+  gem 'database_cleaner'
 end
 
 group :development do
