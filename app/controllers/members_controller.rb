@@ -6,9 +6,8 @@ class MembersController < ApplicationController
   end
 
   def create
-    @member = Member.new(member_params)
-    @member.plan = false
-    render json: @member if @member.save
+    @member = Member.create(member_params)
+    render json: @member
   end
 
   def show
