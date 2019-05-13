@@ -18,12 +18,16 @@ This is an API for a membership platform.
   
 - The **members_controller** and **plans_controller** hold the code for handling requests
 
+| Endpoint                    | Parameters                                                                                                                                   | Response                                                                                 | Description                     |
+|-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|---------------------------------|
+| GET /plans                  | <none>                                                                                                                                       | [{"name": string, "start_date": "string", "end_date": "string"},{}..]                    | get all plans                   |
+| POST /plans                 | **Required: name** <br/> <br/>{<br/>"name": string, "start_date": "string", "end_date": "string" <br/> }                                                            | {"name": string, "start_date": "string", "end_date": "string"}                           | create a plan                   |
+| GET /plans/:plan_id/members | plan_id: integer                                                                                                                             | [{"name": string, "start_date": "string", "end_date": "string"},...]                     | get members belonging to a plan |
+| POST /members               | **Required: first_name, last_name, date_of_birth**  <br/> <br/>{<br/> "first_name": "string", "last_name: "string", "date_of_birth": "string", plan_id:"integer"<br/> } | {<br/> first_name: "string", last_name: "string", date_of_birth: "string", plan_id: "integer"<br/> } | create a member                 |
+| PUT /members/:id            | { plan_id: integer }                                                                                                                         | {<br/> first_name: "string", last_name: "string", date_of_birth: "string", plan_id: "integer"<br/> } | assign a member to a plan       |
+
 
 #### Todos
- - [ ] Add `member_controller` tests
  - [ ] Remove **recurrent** column flag from Plans table
 
- - [ ] Add table of endpoints to the README
-
  - [ ] Add API namespacing
-
