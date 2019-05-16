@@ -1,4 +1,6 @@
 class PlansController < ApplicationController
+  before_action :authorize, only: [:create]
+
   def index
     @plans = Plan.all
     render json: @plans

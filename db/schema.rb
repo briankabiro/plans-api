@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_10_101927) do
+ActiveRecord::Schema.define(version: 2019_05_16_080208) do
 
   create_table "members", force: :cascade do |t|
     t.string "first_name"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 2019_05_10_101927) do
     t.integer "plan_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
+    t.string "email"
+    t.string "password_digest"
     t.index ["plan_id"], name: "index_members_on_plan_id"
   end
 

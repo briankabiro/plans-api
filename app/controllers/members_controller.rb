@@ -1,4 +1,6 @@
 class MembersController < ApplicationController
+  before_action :authorize, only: [:update]
+
   def index
     @members = Member.all
 
@@ -6,8 +8,25 @@ class MembersController < ApplicationController
   end
 
   def create
-    @member = Member.create(member_params)
-    render json: @member
+    member = Member.new(member_params)
+    member.password = params[:password]
+
+    if member.save
+      render json: { message: 'Member created successfully' }, status: :created 
+    else
+      render json: { errors: member.errors.full_messages }, status: :bad_request 
+    end
+  end
+
+  def login
+    member = Member.find_by(email: params[:email]).try(:authenticate, params[:password])
+
+    if member
+      auth_token = JsonWebToken.encode({user_id: member.id})
+      render json: { auth_token: auth_token }, status: :ok
+    else
+      render json: { error: 'Invalid username / password' }, status: :unauthorized
+    end
   end
 
   def show
@@ -24,6 +43,6 @@ class MembersController < ApplicationController
 
   private
   def member_params
-    params.require(:member).permit(:first_name, :last_name, :date_of_birth)
+    params.require(:member).permit(:email, :password, :first_name, :last_name, :date_of_birth)
   end
 end
