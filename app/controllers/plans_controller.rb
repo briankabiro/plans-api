@@ -1,4 +1,6 @@
 class PlansController < ApplicationController
+  before_action :authorize
+
   def index
     @plans = Plan.all
     render json: @plans
@@ -21,6 +23,6 @@ class PlansController < ApplicationController
 
   private
   def plan_params
-    params.permit(:name, :start_date, :end_date, :recurrent)
+    params.permit(:name, :start_date, :end_date)
   end
 end

@@ -1,17 +1,19 @@
 class MembersController < ApplicationController
-  def index
-    @members = Member.all
-
-    render json: @members
-  end
+  before_action :authorize, only: [:create, :update]
 
   def create
-    @member = Member.create(member_params)
-    render json: @member
+    member = Member.new(member_params)
+
+    if member.save
+      render json: { message: 'Member created successfully' }, status: :created 
+    else
+      render json: { errors: member.errors.full_messages }, status: :bad_request 
+    end
   end
 
-  def show
-    render json: Member.find(params[:id])
+  def signup
+    auth_token = JsonWebToken.encode
+    render json: { auth_token: auth_token }, status: :ok
   end
 
   def update
