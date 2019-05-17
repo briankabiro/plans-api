@@ -8,17 +8,11 @@ This is an API for a membership platform.
   3. Run `rails db:migrate`
   4. Run `rails s` to start the API
 
-#### Testing
-- Run `rspec` to run the tests
-
-- On the repo, the coverage percentage can be found in this [file](https://github.com/briankabiro/plans-api/blob/master/coverage/.last_run.json).
-
 #### Project outline
 - The API currently has two resources: plans and members.
   
 - The **members_controller** and **plans_controller** hold the code for handling requests
 
-- 
 
 | Endpoint                    | Parameters                                                                                                                                   | Response                                                                                 | Description                     |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|---------------------------------|
@@ -28,8 +22,18 @@ This is an API for a membership platform.
 | POST /members               | **Required: first_name, last_name, date_of_birth**  <br/> <br/>{<br/> "first_name": "string", "last_name: "string", "date_of_birth": "string", plan_id:"integer"<br/> } | {<br/> first_name: "string", last_name: "string", date_of_birth: "string", plan_id: "integer"<br/> } | create a member                 |
 | PUT /members/:id            | { plan_id: integer }                                                                                                                         | {<br/> first_name: "string", last_name: "string", date_of_birth: "string", plan_id: "integer"<br/> } | assign a member to a plan       |
 
+#### Authorization
+The API uses token-based authorization. The API expects the token to be passed in to the Authorization header with every request. 
 
-#### Todos
- - [ ] Remove **recurrent** column flag from Plans table
+It's possible to generate a token to consume the API locally. The token can only be generated if you pass in a codename parameter to the API on the `/signup` endpoint. 
 
- - [ ] Add API namespacing
+```
+{
+  "codename": "kittens"
+}
+```
+
+#### Testing
+- Run `rspec` to run the tests
+
+- On the repo, the coverage percentage can be found in this [file](https://github.com/briankabiro/plans-api/blob/master/coverage/.last_run.json).
