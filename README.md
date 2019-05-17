@@ -19,13 +19,13 @@ This is an API for a membership platform.
 | GET /plans                  | <none>                                                                                                                                       | [{"name": string, "start_date": "string", "end_date": "string"},{}..]                    | get all plans                   |
 | POST /plans                 | **Required: name** <br/> <br/>{<br/>"name": string, "start_date": "string", "end_date": "string" <br/> }                                                            | {"name": string, "start_date": "string", "end_date": "string"}                           | create a plan                   |
 | GET /plans/:plan_id/members | plan_id: integer                                                                                                                             | [{"name": string, "start_date": "string", "end_date": "string"},...]                     | get members belonging to a plan |
-| POST /members               | **Required: first_name, last_name, date_of_birth**  <br/> <br/>{<br/> "first_name": "string", "last_name: "string", "date_of_birth": "string", plan_id:"integer"<br/> } | {<br/> first_name: "string", last_name: "string", date_of_birth: "string", plan_id: "integer"<br/> } | create a member                 |
-| PUT /members/:id            | { plan_id: integer }                                                                                                                         | {<br/> first_name: "string", last_name: "string", date_of_birth: "string", plan_id: "integer"<br/> } | assign a member to a plan       |
+| POST /members               | **Required: first_name, last_name, date_of_birth**  <br/> <br/>{<br/> "first_name": "string",<br/> "last_name: "string", "date_of_birth": "string", plan_id:"integer"<br/> } | {<br/> "first_name": "string", "last_name": "string", "date_of_birth": "string", plan_id: "integer"<br/> } | create a member                 |
+| PUT /members/:id            | { plan_id: integer }                                                                                                                         | {<br/> "first_name": "string", "last_name:: "string", "date_of_birth:: "string", plan_id: "integer"<br/> } | assign a member to a plan       |
 
 #### Authorization
-The API uses token-based authorization. The API expects the token to be passed in to the Authorization header with every request. 
+The API uses token-based authorization. The API expects the token to be passed in to the **Authorization** header with every request. 
 
-It's possible to generate a token to consume the API locally. The token can only be generated if you pass in a codename parameter to the API on the `/signup` endpoint. 
+It's possible to generate a token to consume the API locally. The token can only be generated if you make a post request to the `/signup` endpoint with the following body: 
 
 ```
 {

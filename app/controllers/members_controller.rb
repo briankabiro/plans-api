@@ -11,7 +11,16 @@ class MembersController < ApplicationController
     end
   end
 
-  def update
+  def signup
+    if params[:codename] == codename
+      auth_token = JsonWebToken.encode(codename)
+      render json: { auth_token: auth_token }, status: :ok
+    else
+      render json: { "message": "invalid codename"}, status: :bad_request
+    end
+  end
+
+  def assign_plan
     @member = Member.find(params[:id])
     @member.plan_id = params[:plan_id]
     @member.save
