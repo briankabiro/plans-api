@@ -31,11 +31,3 @@ This is an API for a membership platform.
  - [ ] Remove **recurrent** column flag from Plans table
 
  - [ ] Add API namespacing
-
- - [ ] member can be created by signing up, admin flag is passed in
-
- - [ ] member provides an email address and password when signing in, after signing in they get a token
-
- - [ ] if they are an admin, they can create a plan, add other members to plans
-
- - [ ] a member can sign up, and view the plans they belong to
