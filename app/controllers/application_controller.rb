@@ -1,7 +1,13 @@
-require './lib/json_web_token.rb'
+include JwtAuthentication
+include JsonWebToken
 
 class ApplicationController < ActionController::API
-  def is_admin?
-    current_user.is_admin?
+  def authorize
+    payload = JsonWebToken.decode(request.headers["authorization"])
+    if payload and payload.first == 'admin'
+      return true 
+    else
+      invalid_authentication
+    end
   end
 end

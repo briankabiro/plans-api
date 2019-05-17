@@ -11,15 +11,17 @@ describe 'Members' do
     }
   end
 
+  let(:headers) { valid_headers }
+
   let(:valid_plan_attributes) do
     {
-      name: 'Premium', start_date: '2019-05-03', end_date: '2019-5-12'
+      name: 'Premium', start_date: '2019 -05-03', end_date: '2019-5-12'
     }
   end
   
   describe 'POST /members' do
     it 'creates a member' do
-      post '/members', params: valid_member_attributes 
+      post('/members', params: valid_member_attributes, headers: valid_headers)
       expect(json).not_to be_empty
     end
   end
@@ -29,8 +31,8 @@ describe 'Members' do
       let(:plan) { Plan.create(valid_plan_attributes) }
 
       it 'assigns it to the member' do
-        post '/members', params: valid_member_attributes
-        put "/members/#{Member.first.id}", params: { "plan_id": plan.id }
+        post '/members', params: valid_member_attributes, headers: valid_headers
+        put "/members/#{Member.first.id}", params: { "plan_id": plan.id }, headers: valid_headers
 
         expect(Member.first.plan_id).to eq(plan.id)
       end

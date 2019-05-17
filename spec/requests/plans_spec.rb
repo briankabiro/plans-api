@@ -7,8 +7,10 @@ describe 'Plans API' do
     }
   end
 
+  let(:headers) { valid_headers }
+
   describe 'GET /plans' do
-    before { get '/plans' }
+    before { get '/plans' , headers: valid_headers }
 
     context 'when no plan has been created' do
       it 'returns an empty array' do
@@ -18,7 +20,7 @@ describe 'Plans API' do
 
     context 'when a plan has been created' do
       let!(:plan) { Plan.create(valid_plan_attributes) }
-      before { get '/plans' }
+      before { get '/plans', headers: valid_headers }
   
       it 'returns all created plans' do
         expect(json).not_to be_empty
@@ -29,7 +31,7 @@ describe 'Plans API' do
 
   describe 'POST /plans' do
     it 'creates a plan successfully' do
-      post "/plans", params: valid_plan_attributes
+      post "/plans", params: valid_plan_attributes, headers: valid_headers
       expect(json).to_not be_empty
     end
   end
@@ -38,7 +40,7 @@ describe 'Plans API' do
     let!(:plan) { Plan.create(valid_plan_attributes) }
 
     context 'when a plan has no members' do
-      before { get "/plans/#{plan.id}/members" }
+      before { get "/plans/#{plan.id}/members", headers: valid_headers }
       it 'returns an empty array' do
         expect(json).to be_empty
       end
@@ -54,7 +56,7 @@ describe 'Plans API' do
         }
       )}
 
-      before { get "/plans/#{plan.id}/members" }
+      before { get "/plans/#{plan.id}/members", headers: valid_headers }
 
       it 'returns the member' do
         expect(json).not_to be_empty

@@ -2,8 +2,14 @@ require 'rails_helper'
 
 RSpec.describe Plan, type: :model do
   # add gem for should matchers
-  it { should validate_presence_of(:name) }
-  it { should validate_uniqueness_of(:name) }
+  describe "Validations" do
+    it { should validate_presence_of(:name) }
+    it { should validate_uniqueness_of(:name) }
+  end
+
+  describe "Associations" do
+    it { should have_many(:members) }
+  end
 
   describe '#recurrent?' do
     context 'when both start date and end date are present' do
