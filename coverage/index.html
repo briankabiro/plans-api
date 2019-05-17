@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-05-17T12:11:55+03:00">2019-05-17T12:11:55+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-05-17T13:40:42+03:00">2019-05-17T13:40:42+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">95.02%</span></span>
+    (<span class="covered_percent"><span class="green">95.45%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.53
+         1.54
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>27</b> files in total.
-    <b>221</b> relevant lines. 
+    <b>220</b> relevant lines. 
     <span class="green"><b>210</b> lines covered</span> and
-    <span class="red"><b>11</b> lines missed </span>
+    <span class="red"><b>10</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,11 +62,11 @@
       
       <tr>
         <td class="strong"><a href="#0c1ce5900a80a12d6c708a04003180d57dabc215" class="src_link" title="app/controllers/members_controller.rb">app/controllers/members_controller.rb</a></td>
-        <td class="yellow strong">83.33 %</td>
-        <td>31</td>
-        <td>18</td>
+        <td class="yellow strong">88.24 %</td>
+        <td>30</td>
+        <td>17</td>
         <td>15</td>
-        <td>3</td>
+        <td>2</td>
         <td>1.1</td>
       </tr>
       
@@ -283,7 +283,7 @@
       <tr>
         <td class="strong"><a href="#f066b0b7bf49b2d7d14d8b8a35259e173eb08164" class="src_link" title="spec/requests/members_spec.rb">spec/requests/members_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>41</td>
+        <td>39</td>
         <td>18</td>
         <td>18</td>
         <td>0</td>
@@ -389,7 +389,7 @@
         <li class="covered" data-hits="9" data-linenumber="7">
           <span class="hits">9</span>
           
-          <code class="ruby">    if payload and payload.first == &#39;admin&#39;</code>
+          <code class="ruby">    if payload</code>
         </li>
       
         <li class="covered" data-hits="9" data-linenumber="8">
@@ -436,11 +436,11 @@
         <div class="source_table" id="0c1ce5900a80a12d6c708a04003180d57dabc215">
   <div class="header">
     <h3>app/controllers/members_controller.rb</h3>
-    <h4><span class="yellow">83.33 %</span> covered</h4>
+    <h4><span class="yellow">88.24 %</span> covered</h4>
     <div>
-      <b>18</b> relevant lines. 
+      <b>17</b> relevant lines. 
       <span class="green"><b>15</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -528,25 +528,25 @@
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">  def signup</code>
+          <code class="ruby">  def update</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    auth_token = JsonWebToken.encode</code>
+          <code class="ruby">    @member = Member.find(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    render json: { auth_token: auth_token }, status: :ok</code>
+          <code class="ruby">    @member.plan_id = params[:plan_id]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @member.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
@@ -558,37 +558,37 @@
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">  def update</code>
+          <code class="ruby">    render json: @member</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="20">
           
-          <code class="ruby">    @member = Member.find(params[:id])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
           
-          <code class="ruby">    @member.plan_id = params[:plan_id]</code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @member.save</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">    render json: @member</code>
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def member_params</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="24">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    params.permit(:first_name, :last_name, :date_of_birth, :codename)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
@@ -606,28 +606,22 @@
         <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">  def codename</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="28">
           
-          <code class="ruby">  def member_params</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="29">
-          <span class="hits">2</span>
           
-          <code class="ruby">    params.require(:member).permit(:first_name, :last_name, :date_of_birth)</code>
+          <code class="ruby">    &quot;kittens&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">end</code>
@@ -2224,7 +2218,7 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  resources :members, only: [:create, :update]</code>
+          <code class="ruby">  resources :members, only: [:index, :create, :update]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -2248,7 +2242,7 @@
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">  get &#39;/signup&#39;, to: &#39;members#signup&#39;</code>
+          <code class="ruby">  post &#39;/signup&#39;, to: &#39;members#signup&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -2309,7 +2303,7 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.encode(payload: &#39;admin&#39;)</code>
+          <code class="ruby">  def self.encode(payload=&#39;admin&#39;)</code>
         </li>
       
         <li class="covered" data-hits="9" data-linenumber="7">
@@ -3280,43 +3274,43 @@
         <li class="never" data-hits="" data-linenumber="6">
           
           
-          <code class="ruby">      &quot;member&quot;: {</code>
+          <code class="ruby">      &quot;first_name&quot;: &quot;John&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby">        &quot;first_name&quot;: &quot;John&quot;,</code>
+          <code class="ruby">      &quot;last_name&quot;: &quot;Doe&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
           
           
-          <code class="ruby">        &quot;last_name&quot;: &quot;Doe&quot;,</code>
+          <code class="ruby">      &quot;date_of_birth&quot;: &quot;1988-04-03&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">        &quot;date_of_birth&quot;: &quot;1988-04-03&quot;</code>
+          <code class="ruby">    }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">      }</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">    }</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">  let(:headers) { valid_headers }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
@@ -3328,166 +3322,154 @@
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">  let(:headers) { valid_headers }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
-          
           <code class="ruby">  let(:valid_plan_attributes) do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
           <code class="ruby">    {</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">      name: &#39;Premium&#39;, start_date: &#39;2019 -05-03&#39;, end_date: &#39;2019-5-12&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">    }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &#39;POST /members&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;creates a member&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
           <code class="ruby">      post(&#39;/members&#39;, params: valid_member_attributes, headers: valid_headers)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(json).not_to be_empty</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &#39;PUT /members/:id&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
           <code class="ruby">    context &#39;when a valid plan id is passed in&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="31">
+        <li class="covered" data-hits="2" data-linenumber="29">
           <span class="hits">2</span>
           
           <code class="ruby">      let(:plan) { Plan.create(valid_plan_attributes) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
           <code class="ruby">      it &#39;assigns it to the member&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
           <code class="ruby">        post &#39;/members&#39;, params: valid_member_attributes, headers: valid_headers</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
           <code class="ruby">        put &quot;/members/#{Member.first.id}&quot;, params: { &quot;plan_id&quot;: plan.id }, headers: valid_headers</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="37">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
           <code class="ruby">        expect(Member.first.plan_id).to eq(plan.id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby">end</code>

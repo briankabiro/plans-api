@@ -18,6 +18,8 @@ This is an API for a membership platform.
   
 - The **members_controller** and **plans_controller** hold the code for handling requests
 
+- 
+
 | Endpoint                    | Parameters                                                                                                                                   | Response                                                                                 | Description                     |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|---------------------------------|
 | GET /plans                  | <none>                                                                                                                                       | [{"name": string, "start_date": "string", "end_date": "string"},{}..]                    | get all plans                   |

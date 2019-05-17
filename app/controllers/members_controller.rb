@@ -11,11 +11,6 @@ class MembersController < ApplicationController
     end
   end
 
-  def signup
-    auth_token = JsonWebToken.encode
-    render json: { auth_token: auth_token }, status: :ok
-  end
-
   def update
     @member = Member.find(params[:id])
     @member.plan_id = params[:plan_id]
@@ -26,6 +21,10 @@ class MembersController < ApplicationController
 
   private
   def member_params
-    params.require(:member).permit(:first_name, :last_name, :date_of_birth)
+    params.permit(:first_name, :last_name, :date_of_birth, :codename)
+  end
+
+  def codename
+    "kittens"
   end
 end

@@ -4,7 +4,7 @@ include JsonWebToken
 class ApplicationController < ActionController::API
   def authorize
     payload = JsonWebToken.decode(request.headers["authorization"])
-    if payload and payload.first == 'admin'
+    if payload
       return true 
     else
       invalid_authentication

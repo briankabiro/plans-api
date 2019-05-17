@@ -3,11 +3,9 @@ require 'rails_helper'
 describe 'Members' do
   let(:valid_member_attributes) do
     {
-      "member": {
-        "first_name": "John",
-        "last_name": "Doe",
-        "date_of_birth": "1988-04-03"
-      }
+      "first_name": "John",
+      "last_name": "Doe",
+      "date_of_birth": "1988-04-03"
     }
   end
 
