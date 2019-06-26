@@ -35,5 +35,3 @@ It's possible to generate a token to consume the API locally. The token can only
 
 #### Testing
 - Run `rspec` to run the tests
-
-- On the repo, the coverage percentage can be found in this [file](https://github.com/briankabiro/plans-api/blob/master/coverage/.last_run.json).
