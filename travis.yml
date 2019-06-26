@@ -1,3 +1,11 @@
+addons:
+  postgresql: 9.6
+before_script:
+  - bundle exec rails db:create
+dist: trusty
 language: ruby
 rvm:
- - 2.5
+  - 2.5.1
+script:
+  - bundle exec rails db:migrate RAILS_ENV=test
+	- bundle exec rspec
