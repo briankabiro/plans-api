@@ -1,6 +1,6 @@
 ## Plans API
 
-This is an API for a membership platform. 
+This is an API for a membership platform.
 
 #### Setup
   1. Clone the repository
@@ -10,8 +10,8 @@ This is an API for a membership platform.
 
 #### Project outline
 - The API currently has two resources: plans and members.
-  
-- The **members_controller** and **plans_controller** hold the code for handling requests
+
+- The **members_controller** and **plans_controller** hold the code for handling requests.
 
 
 | Endpoint                    | Parameters                                                                                                                                   | Response                                                                                 | Description                     |
@@ -23,15 +23,7 @@ This is an API for a membership platform.
 | PUT /members/:id            | { plan_id: integer }                                                                                                                         | {<br/> "first_name": "string", "last_name:: "string", "date_of_birth:: "string", plan_id: "integer"<br/> } | assign a member to a plan       |
 
 #### Authorization
-The API uses token-based authorization. The API expects the token to be passed in to the **Authorization** header with every request. 
-
-It's possible to generate a token to consume the API locally. The token can only be generated if you make a post request to the `/signup` endpoint with the following body: 
-
-```
-{
-  "codename": "kittens"
-}
-```
+The API uses token-based authorization. The API expects the token to be passed in to the **Authorization** header with every request.
 
 #### Testing
 - Run `rspec` to run the tests
