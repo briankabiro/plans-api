@@ -5,7 +5,12 @@ class MembersController < ApplicationController
     member = Member.create(member_params)
 
     if member.persisted?
-      render json: { message: 'Member created successfully', token: JsonWebToken.encode(member.first_name) }, status: :created
+      render
+        json: {
+          message: 'Member created successfully',
+          token: JsonWebToken.encode(member.first_name)
+        },
+        status: :created
     else
       render json: { errors: member.errors.full_messages }, status: :bad_request
     end
@@ -26,6 +31,6 @@ class MembersController < ApplicationController
   private
 
   def member_params
-    params.permit(:first_name, :last_name, :date_of_birth, :codename)
+    params.permit(:first_name, :last_name, :date_of_birth)
   end
 end

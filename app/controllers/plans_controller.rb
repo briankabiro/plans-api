@@ -22,6 +22,7 @@ class PlansController < ApplicationController
   end
 
   private
+
   def plan_params
     params.permit(:name, :start_date, :end_date)
   end

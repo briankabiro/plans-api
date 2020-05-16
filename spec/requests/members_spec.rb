@@ -16,10 +16,11 @@ describe 'Members' do
       name: 'Premium', start_date: '2019 -05-03', end_date: '2019-5-12'
     }
   end
-  
+
   describe 'POST /members' do
     it 'creates a member' do
       post('/members', params: valid_member_attributes, headers: valid_headers)
+
       expect(json).not_to be_empty
     end
   end
